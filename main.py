@@ -986,7 +986,7 @@ l.sort()        # sorts the array
 
 
 
-# tuples [9]
+# Tuples [9]
 # intro to tuples [9.1]
 """
     - Tuples in python are used to store multiple items in a single variable
@@ -1146,7 +1146,7 @@ print(tup1 * 2)  # prints: ('apple', 'banana', 'orange', 'apple', 'banana', 'ora
 
 
 
-# sets [10]
+# Sets [10]
 # intro to sets [10.1]
 """
     - Sets are another data-type that allows use to store multiple items in a single variables.
@@ -1286,7 +1286,7 @@ set5 = set1.symmetric_difference(set2)
 
 
 
-# dictionaries [11]
+# Dictionaries [11]
 # intro to dictionaries [11.1]
 """
     - Dictionaries is another data-type used to store multiple values in a single variable
@@ -1492,7 +1492,7 @@ dct.values()        # returns a list of all the values in the dictionary
 
 
 
-# conditional if statement [12]
+# Conditional If Statement [12]
 # intro to python conditionals [12.1]
 """
     - In programming, a very popular concept is the conditional statements.
@@ -1623,7 +1623,7 @@ if 1 == 1:
 
 
 
-# while loops [13]
+# While Loops [13]
 # intro to loops in python [13.1]
 """
     - Loops are another core and main subject in programming
@@ -1631,7 +1631,7 @@ if 1 == 1:
         1- while loops
         2- for loops
     }
-    - A loop is a block of code that will keep running over and over as long as it hasn't completed
+    - A loop is a block of code that will keep running over and over till it's job is done
     - The code that comes after the loop will not run until the loop is completed
 """
 while 1 == 2:
@@ -1644,6 +1644,7 @@ while 1 == 2:
     - as long as the condition evaluates to True, the code inside the while block will keep running over and over
     - the code that comes after the while statement will not run until the loop is completed and finished
     - as soon as the loop condition evaluates to false, the code will continue
+    - the while loop can be used to do a task a number of times
 """
 # example one
 while_condition = True
@@ -1688,19 +1689,622 @@ while _c_ < 6:
 """
     - remember the else statement in the conditionals? it can be used in while loops
     - the else statement code will run as soon as the while condition is no longer true
+    - the else statement will NOT run if the while loop was cut by a break statement
 """
 _d_ = 0
 while _d_ < 6:
     _d_ += 1
     print(_d_)
 else:
-    print("_d_ is no longer less than 6, loop ended!")
+    print("_d_ is no longer less than 6, loop ended and a break statement was NOT used!")
+
+# the pass statement in while loops [13.6]
+"""
+    - Remember the "pass" statement we learned about in the last chapter with if statements?
+    - A pass statement can also be used in while loops when we want to create an empty one
+"""
+while False:
+    pass
 
 
 
 
-# for loops [14]
+# For Loops [14]
 # intro to for loops [14.1]
+"""
+    - The second type of loops in python, the for loops
+    - A for loop is declared using the "for" keyword
+    - A for loop is used to iterate over a sequence
+    - A for loop can be used to iterate through collections (lists, tuples, sets, dictionaries) or even strings
+    - Using a for statement, we can execute a block of code once for each item in a collection, or for each 
+    character inside a string
+"""
+# example one
+loop_through_string = "Hello world!"
+for char in loop_through_string:  # "char" is a variable that contains the current character we are looping through
+    print(char)  # we can do operations on each character in the string using the "char" variable
+# the previous code will iterate through each character inside the string and print it
+# example two
+loop_through_list = ["Swordax", "SRDX", "SRX"]
+for name in loop_through_list:  # "name" is a variable that contains the current item we are looping through
+    print(name)  # we can do operations on each item in the list using the "name" variable
+# the previous code will iterate through each item in the list and print it
+"""
+    - Note: the variable used to represent the current iterated value is a local variable and 
+    cannot be accessed outside the loop statement block, so you can re-use it outside the loop 
+    or in other loops for example.
+    - Some popular naming traditions when programming and using a for loop statement: {
+        1- using "i" as a variable name when iterating through numbers
+        2- using "x" as a variable name when iterating through items in a list
+        3- using "j" as a variable name when iterating through numbers when "i" is taken by a parent loop
+    } * at the end its just a name and you can use whatever name you wish to use
+"""
+
+# break, continue, pass, and else statements in for loops [14.2]
+"""
+    - The break, continue, and pass statements that were mentioned in the "while" chapter 
+    can be used in for loops as well!
+"""
+for name in loop_through_list:
+    if name == "SRDX":
+        break
+    print(name)
+"""
+    - The previous code will end the loop and cancel looping if the current iterated value is "SRDX"
+    - The continue statement can be used the same way, tho as you know, the continue statement will not 
+    end and cancel the loop, it will just skip the current iteration and go for the next one, and the 
+    code that comes after the "continue" statement inside the loop block will not run for the current iteration
+    - The pass statement can also be used in for loops the same way we learned about it before, it should be 
+    used if you ever wanted to create an empty loop block
+"""
+"""
+    - Remember how we used the else statement with the while loops? we can do the same with for loops
+    - The else statement block after the for loop will run after the loop is completed, however, it 
+    will not run if the statement was cut by a break statement
+"""
+for name in loop_through_list:
+    print(name)
+else:
+    print("The loop is completed and a break statement was NOT applied")
+
+# looping through a sequence of numbers [14.3]
+"""
+    - You might sometimes need to loop a number of times and have access to that specific number
+    - You can do that by creating a list of numbers and then iterating through that list, but that is 
+    a very bad and un-efficient way of doing things obviously
+    - To iterate through a sequence of numbers, you can use the range() function
+    - The range() function provides a sequence of numbers that you can iterate through
+    - The range() function starts from 0 (by default), and throughout the loop, on each iteration the number 
+    will increment by 1 (by default)
+"""
+for i in range(6):
+    print(i)
+# the previous code will print numbers from 0 to 5 (6 excluded)
+"""
+    - The range() function starts from 0 by default, but its possible to start from a custom number 
+    by adding a parameter to specify that number
+"""
+for i in range(2, 6):
+    print(i)
+# the previous code will print the numbers from 2 to 5 (6 excluded)
+"""
+    - The range() function increments the counter variable by 1 on each iteration by default, but its possible 
+    to increment by a custom specified number by adding another parameter to specify the incrementing value
+"""
+for i in range(2, 11, 2):
+    print(i)
+# the previous code will print the even numbers from 2 to 11 (11 excluded) : (2, 4, 6, 8, 10)
+
+
+
+
+# Functions [15]
+# intro to functions [15.1]
+"""
+    - Functions, another fundamental and basic subject to learn in programming
+    - Functions can be defined as a container of code that won't run unless it was called to run
+    - A function can take data into it, called parameters or arguments
+    - A function can return data as a result
+    - A function in python can be defined using the keyword "def"
+    - The code inside the function can be grouped using indentation as we are used to in loops and if statements
+"""
+def my_first_function():
+    # this is the content of the function
+    print("This print statement will not run until the function is called to work")
+my_first_function()  # this is how to call a function, you can call it anywhere you want (after function declaration)
+
+# function arguments [15.2]
+"""
+    - An argument [arg] (aka: parameter [param]) are data passed into a function
+    - You can deal with args as variables but inside a function, args cannot be accessed outside the function block
+    - Args can be declared/defined inside the parenthesis after the function name
+    - You can add as many args as you want, separated with commas
+    - When calling a function, pass the values of the args inside the parenthesis when calling the function
+    - The number of defined args should be the same as the number of passed args when calling the function
+"""
+def add_two_numbers(a, b):
+    print(a + b)
+add_two_numbers(1, 2)  # this should print 3
+def subtract_two_numbers(a ,b):  # notice how we used the same argument names as the previous function
+    print(a - b)
+# this function wont run because it was not called
+
+# advanced arguments [15.3]
+"""
+    * Arbitrary Arguments *
+    - If you don't know how many args will be passed, you can group all the args in a tuple by using the 
+    arbitrary args* (using the star character *)
+"""
+def get_second_name(*names):
+    print(names[1])  # 1 as in 2 .. remember counting from 0
+get_second_name("Swordax", "SRDX", "SRX")  # prints: "SRDX"
+"""
+    * Keyword Arguments *
+    - You can pass args into a function using the key:pair syntax, like that, args wont have to be 
+    ordered parallel to the receiving names in the function
+    - This approach can be referred as "Keyword Args" or "kwargs"
+"""
+def get_last_name(name1, name2, name3):
+    print(name3)
+get_last_name(name2 = "SRDX", name3 = "SRX", name1 = "Swordax")  # prints: "SRX"
+"""
+   * Arbitrary Keyword Arguments *
+   - You might not know how many keyword args you will be receiving, you can use the arbitrary arguments 
+   concept here to collect the args in a collection as well, but since it will be a key:pair syntax, you 
+   don't want them to be grouped in a tuple, but in a dictionary.
+   - To do that you can use the arbitrary keyword args approach, by using two ** stars instead of one
+"""
+def get_first_name(**names):
+    print(names["fname"])
+get_first_name(lname = "SRX", fname = "Swordax")  # prints: "Swordax"
+"""
+    * Default Parameter Value *
+    - You might sometimes not receive an argument value from the function call
+    - To prevent errors, you can provide a default value for such cases
+    - The default value will be used if no value was listed when function was called
+"""
+def print_welcome(name = "Anonymous"):
+    print("Welcome Mr " + name)
+print_welcome("Swordax")  # prints: "Welcome Mr Swordax"
+print_welcome()  # prints: "Welcome Mr Anonymous"
+"""
+    - An argument data-type doesn't have to be a string, it can be from any data type, could be an integer, 
+    a float, or even a collection (list, tuple, set, dictionary)
+"""
+def print_welcome_with_gender(data):
+    for person in data:
+        print("Welcome " + person[0] + ", you're a " + person[1])
+    # notice how we dealt with the passed arg as a list
+persons = [["Swordax", "Boy"], ["Swordia", "Girl"]]
+print_welcome_with_gender(persons)  # passed a list as an arg to the function
+
+# the return statement [15.4]
+"""
+    - As mentioned in lesson 15.1, a function can return outputs
+    - You can return a value from a function by using the "return" statement inside the function
+    - A return statement ends the function, so the code that comes after the return statement won't run
+"""
+def add_nums(a, b):
+    return a + b
+add_nums(1, 2)  # this won't print anything since a print statement wasn't used inside the function
+print(add_nums(1, 2))  # prints: 3
+number_three = add_nums(1, 2)  # we declared a variable that contains the value of 1 + 2
+print(number_three)  # prints: 3
+# the pass statement should be used if your function contains no code for some reason
+def empty_func():
+    pass
+
+# recursion [15.5]
+"""
+    - Recursion is not a keyword or a statement, but a very popular mathematical and programming concept
+    - Recursion is a way of doing things
+    - Recursion is basically a function that can call itself
+    - When working with recursion, you need to be very careful as any mistake can cause a function 
+    that keeps calling itself forever, or a function that calls itself to a point that uses excess amounts 
+    of device memory and processor power
+"""
+# demo to recursion
+def recursion_demo(n):
+    if n > 0:
+        result = n + recursion_demo(n - 1)
+        print(result)
+    else:
+        result = 0
+    return result
+recursion_demo(6)
+# recursion could be confusing for new developers, don't worry if you don't understand it right away!
+
+# lambda function [15.6]
+"""
+    - A lambda function is a small anonymous function
+    - A lambda function can take any number of arguments, but it can only have one expression
+    - Basically, a lambda is a shorthand to a small function
+    - Lambda function syntax: function_name = lambda arguments: expression
+    - You can call a lambda function the same way you call any other function
+"""
+lam_func = lambda a: print(a)
+lam_func("Hello world!")  # prints: "Hello world!"
+# lambda function can take as many arguments, just as a normal function
+lam_add = lambda a, b: print(a + b)
+lam_add(1, 2)  # prints: 3
+lam_mult = lambda a, b, c: print(a * b * c)
+lam_mult(1, 2, 3)  # prints: 6
+
+
+
+
+# Object-Oriented Python [16]
+# intro to object-oriented programming (OOP) [16.1]
+"""
+    - Welcome to chapter 16, I would like to introduce you to the world of object-oriented programming! you have 
+    officially passed the beginner chapters and started going deep.
+    - Python is an object-oriented programming language.
+    - Object-oriented programming is a style of programming, a way of building stuff that is all around objects
+    - An object has properties and methods, like a human with properties such as name, height, weight.. and methods 
+    such as speak, hold, move.
+    - Almost everything in python is an object, with its properties and methods.
+"""
+
+# classes & objects [16.2]
+"""
+    - A class is like an object constructor, a "blueprint", or a template for creating objects.
+    - You can create a class using the "class" keyword
+"""
+class MyFirstClass:  # notice the traditional way of naming classes using the PascalCase
+    x = 5
+# the above code creates a class named MyFirstClass and contains a single property called x
+# now you can create objects and store them in variables
+my_first_object = MyFirstClass()
+print(my_first_object.x)  # prints: 5
+"""
+    * __init__ function *
+    - All classes have a built-in function called __init__(), which is always executed when a class is being initiated
+    - The __init__() function is used to assign values to object properties
+"""
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+person_1 = Person("Swordax", 123)
+print(person_1.name)  # prints: "Swordax"
+print(person_1.age)  # prints: 123
+# the __init__() function is called everytime the class is being used to create a new object
+"""
+    * Object Methods *
+    - Objects can also contain methods, methods in objects are functions that belong to the object
+"""
+class Car:
+    def __init__(self, brand, year):
+        self.brand = brand
+        self.year = year
+    def move(self):  # you can define a method in an object like defining any other function we learned about previously
+        print("The " + self.brand + " car moved!")  # this method prints a sentence
+myBmw = Car("BMW", 2022)  # created a new object with properties (brand = "BMW" and year = 2022)
+myBmw.move()  # prints: "The BMW car moved!"
+"""
+    * The self Parameter *
+    - The self parameter is a reference to the current instance of the class, its used to access the properties that 
+    belong to the class.
+    - It doesn't have to be called "self", it can be called whatever you want, but it has to be the first parameter 
+    of any method in the class.
+"""
+class Airplane:
+    def __init__(joemama, brand, model):
+        joemama.brand = brand
+        joemama.model = model
+    def fly(hahay):
+        print("The " + hahay.brand + " plane flew!")
+my_airbus = Airplane("Airbus", "A 350")
+my_airbus.fly()  # prints: "The Airbus plane flew!"
+"""
+    - You can always modify object properties by overwriting them
+"""
+my_airbus.model = "A 380"
+print(my_airbus.model)  # prints: "A 380" even though when the object was created it was set to be "A 350"
+"""
+    - You can also delete object properties by using the "del" keyword
+    - You can even delete the whole object completely by using the "de" keyword
+"""
+del my_airbus.model  # deletes the "model" property of the "my_airbus" object
+del my_airbus  # deletes the whole "my_airbus" object
+"""
+    - A class cannot be empty, but if you ever needed an empty class, you should use the pass keyword
+"""
+class EmptyClass:
+    pass
+
+# inheritance [16.3]
+"""
+    - Inheritance allows us to define a class that inherits properties and methods of another class
+    - We need to know two definitions when working with inheritance: {
+        Parent Class: the class being inherited from (aka: base class)
+        Child Class: the class that inherits from another class (aka: derived class)
+    }
+"""
+# create a parent class and an object from it
+class Father:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def printname(self):
+        print("This person's name is " + self.name)
+thefather = Father("Abo", 30)
+# create a child class and an object from it
+class Son(Father):  # you can inherit all properties and methods from another class by passing it in parenthesis
+    pass
+theson = Son("Eben", 10)
+theson.printname()  # notice how we can use the printname() method even tho it wasn't defined inside the Son class
+"""
+    - You might need to add an __init__() function inside the child class to add more properties
+    - If you added an __init__() function to the child class, the inherited __init__() will be overwritten, but you 
+    might probably still need to inherit the parent's properties in the __init__() function, so, you can keep the 
+    inheritance of the parent's __init__() function by calling the paren't __init__() function inside the children's 
+    __init__() function
+"""
+class Daughter(Father):
+    def __init__(self, name, age, isHijabi):
+        Father.__init__(self, name, age)
+        self.isHijabi = isHijabi
+thedaughter = Daughter("Ebna", 8, True)
+thedaughter.printname()
+"""
+    - A better approach instead of re-calling the parent's __init__() function to keep it's inheritance, is to use the 
+    super() function.
+    - By using the super() function, you wont have to use the name of the parent class, and you wont have to include 
+    the "self" parameter inside parenthesis in the parent's __init__() function calling
+"""
+class Grandson(Father):
+    def __init__(self, name, age, isBaby):
+        super().__init__(name, age)
+        self.isBaby = isBaby
+thegrandson = Grandson("Hafeed", 2, True)
+thegrandson.printname()
+"""
+    - You can add methods to child classes normally as you would with the parent class and any other class
+"""
+class Granddaughter(Father):
+    def __init__(self, name, age, hasHair):
+        super().__init__(name, age)
+        self.hasHair = hasHair
+    def talk(self):
+        print("The grand-daughter " + self.name + " has spoke!")
+thegranddaughter = Granddaughter("Hafeeda", 3, True)
+thegranddaughter.talk()
+
+
+
+
+# Iterators [17]
+# what are iterators [17.1]
+"""
+    - An iterator is an object that contains a countable number of values
+    - An iterator is an object that can be iterated upon, meaning that you can traverse through all the values
+    - In python, an iterator is an object which implements the iterator protocol, which consists of the methods 
+    __iter__() and __next__()
+    - Lists, tuples, dictionaries, and sets are all iterable objects, they are iterable containers that you can 
+    get an iterator from
+    - All these objects have an iter() method, which is used to get an iterator
+"""
+my_colors = ("red", "green", "blue")
+my_iter = iter(my_colors)
+print(next(my_iter))  # prints: "red"
+print(next(my_iter))  # prints: "green"
+print(next(my_iter))  # prints: "blue"
+# even strings are iterable objects, and can return an iterator
+mystring = "yes"
+myiter = iter(mystring)
+print(next(myiter))  # prints: "y"
+print(next(myiter))  # prints: "e"
+print(next(myiter))  # prints: "s"
+
+# create an iterator [17.2]
+"""
+    - You can create an object/class as an iterator, but to do that you will need to implement the __iter__() and 
+    __next__() in your class
+    - the __iter__() method acts similarly to the __init__() in terms of initializing things, it must return the 
+    iterator object itself
+    - the __next__() method also allows you to do operations, and should also return the iterator object itself
+"""
+# we will create an iterator that returns numbers counting from 0 and up
+class MyIterator:
+    def __iter__(self):
+        self.x = 0
+        return self
+    def __next__(self):
+        q = self.x
+        self.x += 1
+        return q
+iterator_object = MyIterator()
+iterator_obj_itr = iter(iterator_object)
+print(next(iterator_obj_itr))  # prints: 0
+print(next(iterator_obj_itr))  # prints: 1
+print(next(iterator_obj_itr))  # prints: 2
+print(next(iterator_obj_itr))  # prints: 3
+# etc..
+
+# stop iterator [17.3]
+"""
+    - Example in lesson 17.2 can go on iterating forever if you continued using the next(), maybe in a loop for example.
+    - To prevent the iteration to go on forever, you can use the "StopIteration" statement.
+    - You can use the "StopIteration" statement inside the __next__() method in a terminating condition, you can 
+    block the iteration if it iterated for a specified number of times
+"""
+class HisIterator:
+    def __iter__(self):
+        self.x = 1
+        return self
+    def __next__(self):
+        if self.x <= 10:
+            q = self.x
+            self.x += 1
+            return q
+        else:
+            StopIteration
+iterator_object2 = HisIterator()
+iterator_obj_itr2 = iter(iterator_object2)
+print(next(iterator_obj_itr2))  # prints: 1
+print(next(iterator_obj_itr2))  # prints: 2
+print(next(iterator_obj_itr2))  # prints: 3
+# etc.. (if iterated 10 times, iteration is blocked and no more iteration is valid)
+
+
+
+
+# Scope [18]
+# what is scope [18.1]
+"""
+    - A variable is only available to use and accessible inside the region/block it was created in, this is called scope
+    - Local scope: a variable created inside a function belongs to the local scope of that function, and can only be 
+    used inside that function
+    - Global scope: a variable created in the main body (top level block) of the code is a global variable and 
+    belongs to the global scope, it is available and can be accessed anywhere across the code
+"""
+my_global_variable = "This is a global variable, can be accessed anywhere in the code"
+def local_demo():
+    my_local_variable = "This is a local variable that belongs to the local_demo() function"
+    # the above variable can only be accessed inside the local_demo() function
+    def nested_demo():
+        print(my_local_variable)  # my_local_variable can be accessed here
+        print(my_global_variable)  # my_global_variable can be accessed here
+
+# variable naming in and out of blocks [18.2]
+"""
+    - If you used the same variable name inside and outside a function, python will treat them as two separate 
+    variables, and the global one wont get overwritten
+"""
+varone = "Yay!"
+def yayfunc():
+    varone = "Noo!"
+    print(varone)  # prints: Noo!
+yayfunc()
+print(varone)  # prints: Yay!
+
+# the global keyword [18.3]
+"""
+    - You might sometimes need to create a global variable, but realize you're inside a scope! what a problem
+    - You can bypass this issue by using the "global" keyword (remember it from chapter 2 ?)
+    - The global keyword can be used to make a global variable inside a scope
+"""
+def useglobal():
+    global isglobal
+    isglobal = True
+useglobal()  # you should call the function!
+print(isglobal)  # works fine!
+"""
+    - You should also use the "global" keyword if you wanted to make a change to a global variable from inside a scope
+"""
+my_global = "Original"
+def change_global():
+    global my_global
+    my_global = "Modified"
+change_global()
+print(my_global)  # prints: "Modified"
+
+
+
+
+# Modules [19]
+# what are modules [19.1]
+"""
+    - Modules are basically a set of pre-written code/functions that you can include and use in your code
+    - Modules are libraries
+    - If you're familiar with JavaScript, then modules are like libraries, and if you're familiar with Node.js, 
+    then modules here are literally the same
+    - You can use modules/libraries that other people wrote to make writing your own code easier, simpler, and faster
+    - You can write your own modules to split your project files and organize things around
+"""
+# lets create a simple module
+def greet(name):
+    print("Hello " + name)
+# now save the file as "greeting.py"
+# congrats! you created your first module
+
+# use/import a module [19.2]
+"""
+    - To use a module that you/other people created, you should import it
+    - You can import modules by using the "import" keyword/statement
+"""
+# lets import the module we created in lesson 19.1
+import greeting
+greeting.greet("Swordax")  # prints: "Hello Swordax"
+# to access the functions inside a module, use the following syntax: modulename.functioname()
+# a module can also contain variables of all types! and those can be accessed outside the module as well
+# lets create a module called people.py, and lets include the following inside it
+person_1 = {
+    "name": "Swordax",
+    "age": 123,
+    "nationality": "Mars"
+}
+# now lets import and use the module inside our project file
+import people
+print(people.person_1["name"])  # prints: "Swordax"
+# as simple as that
+"""
+    - note: as you can tell, a module is a python file, so it should always have the extension of .py just like 
+    any other python file
+"""
+
+# renaming modules [19.3]
+"""
+    - We learned how to use modules with their original names, but you should know that we can rename a module 
+    inside our project file and use it with a different name
+"""
+import mymodule as newname  # like this, we renamed the "mymodule" module as "newname"
+newname.usefunction()  # now we can use the module with its new name!
+
+# built-in modules [19.4]
+"""
+    - Usually, to use an external module, you will need to install it first, but, python has a number of 
+    built-in modules that you can directly import without having to install anything!
+"""
+import platform
+my_system = platform.system()
+print(my_system)  # this will print your system name (Windows, Mac, Linux, or whatever operating system you're using)
+# there is a built-in functions in python that list all the function/variable names in a module, the dir() function
+func_var_names = dir(platform)
+print(func_var_names) # this will print all the functions/variables names present inside the platform module
+
+# specified importing [19.5]
+"""
+    - As you know, a module can contain a number of functions and/or variables
+    - Maybe you don't want to use all the functions/variables inside a module, maybe just one of them
+    - You can do that by doing like the following:
+"""
+# lets create a demo module as an example
+# module saved as demomod.py
+def greet(name):
+    print("Hello " + name)
+def goodbye(name):
+    print("Goodbye " + name + ", see you later!")
+myinfo = {
+    "name": "Swordax",
+    "age": None,
+    "nationality": "Mars",
+    "isMarried": False
+}
+# now lets import te my_info variable only inside the following project file
+from demomod import myinfo
+print(myinfo)  # prints the "myinfo" dictionary
+
+
+
+
+# Dates [20]
 """
     ...
 """
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
