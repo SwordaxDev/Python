@@ -2290,9 +2290,323 @@ print(myinfo)  # prints the "myinfo" dictionary
 
 
 # Dates [20]
+# intro to dates [20.1]
+"""
+    - In programming languages, you can deal with dates
+    - A date in python has no unique data-type, but you can import a module that lets you work with dates as objects
+    - The "datetime" built-in module helps us work with dates as date objects
+    - The datetime module has many methods that return information about the date object
+    - Since the datetime module is built-in, you wont have to install anything
+"""
+# importing the datetime module
+import datetime
+# since we imported the module once in this doc file, we will not import it for later examples and lessons..
+# get the fill current date:
+current_date = datetime.datetime.now()
+print(current_date)  # prints the current date as it's recorded in your system
+"""
+    - We accessed the datetime module, then the datetime object, and then used the now() method
+    - The result contains: year, month, day, hour, minute, second, and microsecond
+"""
+print(current_date.year)  # prints the current year, in my current case, prints: 2022
+print(current_date.strftime("%A"))  # prints the current dat, in my case, prints: Saturday
+
+# create date objects [20.2]
+"""
+    - we can create a date with the datetime module using the datetime() class constructor
+    - the datetime() class constructor required three arguments to create a date, (year, month, day)
+"""
+# create the date when python was first released:
+python_release = datetime.datetime(1991, 2, 20)  # year 1991, 20th of February
+print(python_release)  # prints: 1991-02-20 00:00:00
+"""
+    - The datetime() class can also take extra optional arguments that more describe the date, like hour, minute, etc..
+    - A full list of arguments: (year, month, day, hour, minute, second, microsecond, timezone)
+    - The optional arguments like hour, minute, second, etc.. default to 0, and the timezone defaults to None
+"""
+
+# the strftime() method [20.3]
+"""
+    - The datetime object has a method for formatting date objects into readable strings in various ways
+"""
+now_date = datetime.datetime.now()
+print(now_date.strftime("%B"))  # prints the current month
+"""
+    - Here is a list of possible formats that you can pass into the strftime() method as an argument: {
+        %a : weekday, short version
+        %A : weekday, full version
+        %w : weekday as a number (counts from 0 to 6)
+        %d : day of month (counts from 1 to 31)
+        %b : month name, short version
+        %B : month name, full version
+        %m : month as a number (counts from 1 to 12)
+        %y : year, short version (without century)
+        %Y : year, full version
+        %H : hour, 24 version (counts from 00 to 23)
+        %I : hour, 12 version (counts from 00 to 12)
+        %p : AM/PM
+        %M : minute (counts from 00 to 59)
+        %S : second (counts from 00 to 59)
+        %f : microsecond (counts from 000000 to 999999)
+        %z : UTC offset
+        %Z : timezone
+        %j : day number of year (counts from 001 to 366)
+        %U : week number of year (sunday as first day of week) (counts from 00 to 53)
+        %W : week number of year (monday as first day of week) (counts from 00 to 53)
+        %c : local version of date time
+        %C : century
+        %x : local version of date
+        %X : local version of time
+        %% : a % character
+        %G : ISO 8601 year
+        %u : ISO 8601 weekday (counts from 1 to 7)
+        %V : ISO 8601 week number (counts from 01 to 53)
+    }
+"""
+
+
+
+
+# Math [21]
+# math in python [21.1]
+"""
+    - Python is known for math stuff
+    - Python has a set of built-in math functions, including extensive math module that allows us to perform 
+    mathematical tasks on numbers
+"""
+# built-in math functions:
+"""
+    * min() & max() *
+    - min() is used to find the lowest number between the provided args
+    - max() is used to find the biggest number between the provided args
+"""
+find_min = min(4, 12, 50)
+print(find_min)  # prints: 4
+find_max = max(4, 12, 50)
+print(find_max)  # prints: 50
+"""
+    * abs() *
+    - abs() is used to find the absolute value of a number (the positive version of a number)
+"""
+absolute_val = abs(-21.1)
+print(absolute_val)  # prints: 21.1
+"""
+    * pow() *
+    - pow() is used to power a number by another, takes two arguments (number, powered by)
+"""
+power_by = pow(3, 4)
+print(power_by)  # prints the value of 3^4, which is: 81
+
+# math module [21.2]
+"""
+    - Python has a built-in module called "math", this module extends the list of mathematical functions that you 
+    can use
+    - import math module to start using extra mathematical functions
+"""
+import math  # since we imported it once in this file, we wont be importing it again in later lessons or chapters
+"""
+    * sqrt() *
+    - sqrt() is used to find the square root of a number
+"""
+square_root = math.sqrt(64)
+print(square_root)  # prints the value of square root of 64, which is: 8.0
+"""
+    * ceil() & floor() *
+    - ceil() is used to round a number upwards to the nearest integer
+    - floor() is used to round a number downwards to the nearest integer
+"""
+ceiled_number = math.ceil(2.4)
+print(ceiled_number)  # prints: 3
+floored_number = math.floor(2.4)
+print(floored_number)  # prints: 2
+"""
+    * pi *
+    - math.pi is not a method, but a constant that contains the value of pi
+    - the value of math.pi is: 3.141592653589793
+"""
+pi_value = math.pi
+print(pi_value)  # prints: 3.141592653589793
+"""
+    - There is a huge list of math module methods, but we just mentioned the most important & popular methods
+    - You can find the full list of methods online
+"""
+
+
+
+
+# Python JSON [22]
+# intro to json [22.1]
+"""
+    - JSON stands for JavaScript Object Notation
+    - JSON is text stored as a JavaScript object (or python dictionary since they're similar)
+    - JSON is basically a text format used in JavaScript to store data
+    - JSON syntax is similar to python dictionary syntax
+"""
+# basic json syntax:
+"""
+    {
+        "name": "Swordax",
+        "age": 123321,
+        "isMarried": False,
+        "nationality": "Mars",
+        "phone_number": None,
+        "languages": ["Arabic", "English"]
+    }
+"""
+
+# json in python [22.2]
+"""
+    - There is a built-in module in python that helps us deal with JSON data
+    - The module is called "json"
+    - Import the json module to have access to the json methods
+"""
+# importing json
+import json
+# converting json string to python dictionary, json.loads()
+my_json_data = '{ "name": "Swordax", "age": 123321, "isMarried": false, "extra_info": null}'
+my_py_dict = json.loads(my_json_data)  # use the json.loads() method to convert json string to python dictionary
+# converting python objects to json, json.dumps()
+python_object = {
+    "name": "Swordax",
+    "age": 123321,
+    "isMarried": False,
+    "extra_info": None
+}
+json_data = json.dumps(python_object)  # use the json.dumps() method to convert python objects to json string
+"""
+    - Using the json.dumps() is not just for dictionaries
+    - You can use the josn.dumps() method to convert python objects of the following types into json strings: {
+        (python data-types)          (javascript equivalent data-types)
+        * dict                      -> Object
+        * list                      -> Array
+        * tuple                     -> Array
+        * str                       -> String
+        * int                       -> Number
+        * float                     -> Number
+        * True                      -> true
+        * False                     -> false
+        * None                      -> null
+    }
+"""
+
+# format json results [22.3]
+"""
+    - By using the json.dumps() method, you can convert python objects to json format
+    - But: {
+        - the json string will be un-readable and un-formatted
+        - the default separators between the properties and key:values are (", ", ": ")
+    }
+    - A solution to that is using extra arguments inside the json.dumps() method that help us format the json string 
+    as we want it to be
+"""
+my_py_obj = {
+    "brand": "BMW",
+    "model": "M5",
+    "year": 2022,
+    "isUsed": False,
+    "accidents": None
+}
+# indent: make json string readable by adding new lines and indentation
+my_json_str1 = json.dumps(my_py_obj, indent=4)  # added indentation
+print(my_json_str)  # notice the formatted easy-to-read version of the json string
+"""
+    - First argument is the python object to convert, second is indentation value
+    - By adding the indent argument into the json.dumps() method, the json string will be indented and formatted for us
+"""
+# separators: modify the json string separators
+my_json_str2 = json.dumps(my_py_obj, separators=(". ", " = "))  # modified separators
+print(my_json_str2)
+"""
+    - First argument is the python object to convert, second is defining new separators
+    - By adding the separators argument into the json.dumps() method, the json string will have modified separators
+"""
+# sort_keys: sort/order the keys in the resulting json string
+my_json_str3 = json.dumps(my_py_obj, sort_keys=True)  # sorts the keys in the json string
+"""
+    - First argument is the python object to convert, second is settings the sorting feature to True
+    - By setting the sorting feature to True, the json string will come out with it's keys sorted
+"""
+
+
+
+
+# PIP [23]
+# intro to pip [23.1]
+"""
+    - PIP is a package manager for python packages (modules)
+    - Note: you know modules have two names (modules or libraries), well, now add another name to the list "packages"
+    - If you have python v3.4 or later, PIP is already included and installed by default when you installed python
+    - Package: a package contains all the files you need for a module, as a module can consist of multiple files
+    - Modules: python pre-written code libraries you can include in your project to shorten and finish your work faster
+    - Check if PIP is installed: {
+        - to check if PIP is installed, open the CMD to the location of python's script directory
+        - then type the following command: `pip --version`
+        - if you don't have PIP installed, you can install it from python's official site
+    }
+    - You know how we have built-in modules that we can directly import and use? well, there are external modules 
+    that we don't have built-in with python, so we will need to install them, and we do that using PIP
+    - If you are familiar with Node.js, then PIP can be compared to NPM (Node Package Manager)
+"""
+
+# install a package [23.2]
+"""
+    - To install packages, you will need to open the CMD then navigate to your python's script directory, or just 
+    open the terminal if you are using an IDE like PyCharm or VSCode
+    - Then, use the following command to install a package: `pip install packagename`
+    - After downloading the package, you can now import it in your project and use it
+    - If you want to find and explore available python's external packages, you can find them at https://pypi.org/
+"""
+
+# uninstall a package [23.3]
+"""
+    - Since you can install packages, you should also be able to uninstall them whenever you want
+    - You can uninstall python packages same way you install them, but using a different command
+    - You should open the CMD and navigate to your python's script directory, or open the terminal in your IDE
+    - Then, use the following command to uninstall packages: `pip uninstall packagename`
+    - The PIP manager will then ask for your confirmation of uninstalling the package, just confirm and you're good
+    - You can confirm by entering `y`
+"""
+
+# list installed packages [23.4]
+"""
+    - You might want to find and list all the installed packages you have
+    - You can list the installed packages by using the following command in the CMD with you navigated in your 
+    pythons script directory, or in the terminal in your IDE: `pip list`
+"""
+
+# install and uninstall multiple packages [23.5]
+"""
+    - You might want to install/uninstall multiple packages at once
+    - Well, you don't have to write the command multiple times and wait for each package to install to go to the next
+    - You can simply group them in a single command by doing the following: {
+        `pip install packageone packagetwo packagethree`
+        `pip uninstall packageone packagetwo packagethree`
+    }
+"""
+
+
+
+
+# Try Except [24]
+# intro to try except [24.1]
+"""
+    - You can test your code for errors, if no errors happens, code runs fine, otherwise, instead of letting your 
+    program crash and fail, you can catch the error and log it, solve it, and deal with it
+    - This concept is a popular one in all programming languages, if you're familiar with JavaScript, this is 
+    exactly the same as try - catch
+    - In this subject, there are 3 statements/keywords you need to know about, each contain a block of code: {
+        try : the code inside the try block allows you to test a block of code for errors
+        except : the except block allows you to handle the error and deal with it
+        finally : the finally block lets you execute some code, regardless of what the result of the try-except was
+    }
+    - By using th try-catch, you can avoid getting errors and getting your program crashing, and you can treat and 
+    handle the errors
+"""
 """
     ...
 """
+
+
 
 
 
