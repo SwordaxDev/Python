@@ -1,4 +1,4 @@
-# Python About
+# Python - About
 """
     - Python is a server-side programming language.
     - Python can be used for many things: {
@@ -9,8 +9,207 @@
         * Mathematics
         * System Scripting
     }
-    - This documentation is about Python 3
+    - This documentation uses Python 3
     - Python files have the file extension .py (filename.py)
+"""
+
+# Documentation - About
+"""
+    - This python documentation file is written by Swordax
+    - Find me on github: https://github.com/SwordaxDev/
+    - Find me on discord (Swordax#5756): https://discord.com/users/465453058667839499/
+    - Documentation Repo: https://github.com/SwordaxDev/Python/
+    - Documentation Source: https://w3schools.com/python/
+    - Documentation Properties: {
+        1- created on: 5th of Jan, 2022
+        2- completed on: *undefined*
+    }
+"""
+
+# Documentation - Bibliography
+"""
+    {
+        "[1] Intro": [
+            "[1.1] getting started",
+            "[1.2] syntax",
+            "[1.3] comments",
+            "[1.4] print statement",
+            "[1.5] input"
+        ],
+        "[2] Variables": [
+            "[2.1] intro to variables",
+            "[2.2] casting",
+            "[2.3] overwriting variables",
+            "[2.4] get variable value data type",
+            "[2.5] string variable declaration",
+            "[2.6] variable naming rules",
+            "[2.7] multi-name variable naming style",
+            "[2.8] assigning multiple values to variables",
+            "[2.9] outputting variables",
+            "[2.10] variable scope"
+        ],
+        "[3] Data Types": [
+            "[3.1] intro to data types",
+            "[3.2] data types in real code",
+            "[3.3] setting specific data type (casting)"
+        ],
+        "[4] Numbers": [
+            "[4.1] numeric data types",
+            "[4.2] numeric type conversion",
+            "[4.3] random numbers"
+        ],
+        "[5] Strings": [
+            "[5.1] basic strings",
+            "[5.2] get a specific character in a string",
+            "[5.3] the len() method",
+            "[5.4] the in keyword",
+            "[5.5] slicing strings",
+            "[5.6] string modification",
+            "[5.7] string format() method",
+            "[5.8] escape characters",
+            "[5.9] string methods"
+        ],
+        "[6] Booleans": [
+            "[6.1] intro to booleans",
+            "[6.2] evaluating expressions",
+            "[6.3] booleans in conditional statements",
+            "[6.4] evaluate values",
+            "[6.5] functions returning booleans"
+        ],
+        "[7] Python Operators": [
+            "[7.1] intro to operators",
+            "[7.2] arithmetic operators",
+            "[7.3] assignment operators",
+            "[7.4] comparison operators",
+            "[7.5] identity operators",
+            "[7.6] membership operators"
+        ],
+        "[8] Lists": [
+            "[8.1] intro to lists",
+            "[8.2] properties of lists",
+            "[8.3] accessing list items",
+            "[8.4] changing list items",
+            "[8.5] adding list items",
+            "[8.6] removing list items",
+            "[8.7] looping through lists",
+            "[8.8] list comprehension",
+            "[8.9] sorting lists",
+            "[8.10] copying lists",
+            "[8.11] joining lists",
+            "[8.12] list methods reference"
+        ],
+        "[9] Tuples": [
+            "[9.1] intro to tuples",
+            "[9.2] properties of tuples",
+            "[9.3] accessing tuple items",
+            "[9.4] updating tuples",
+            "[9.5] unpacking tuples",
+            "[9.6] joining tuples",
+            "[9.7] tuple methods"
+        ],
+        "[10] Sets": [
+            "[10.1] intro to sets",
+            "[10.2] set properties",
+            "[10.3] accessing set items",
+            "[10.4] add set items",
+            "[10.5] remove set items",
+            "[10.6] joining sets",
+            "[10.7] set methods"
+        ],
+        "[11] Dictionaries": [
+            "[11.1] intro to dictionaries",
+            "[11.2] properties of dictionaries",
+            "[11.3] access dictionary items",
+            "[11.4] change dictionary items",
+            "[11.5] add dictionary items",
+            "[11.6] removing dictionary items",
+            "[11.7] looping through dictionaries",
+            "[11.8] copy dictionaries",
+            "[11.9] dictionary methods"
+        ],
+        "[12] Conditional If Statement": [
+            "[12.1] intro to python conditionals",
+            "[12.2] the elif statement",
+            "[12.3] the else statement",
+            "[12.4] shorthands and ternary operators",
+            "[12.5] logical operators in conditionals",
+            "[12.6] nested if statements"
+        ],
+        "[13] While Loops": [
+            "[13.1] intro to loops in python",
+            "[13.2] what are while loops",
+            "[13.3] break statement",
+            "[13.4] continue statement",
+            "[13.5] the while else statement",
+            "[13.6] the pass statement in while loops"
+        ],
+        "[14] For Loops": [
+            "[14.1] intro to for loops",
+            "[14.2] break, continue, pass, and else statements in for loops",
+            "[14.3] looping through a sequence of numbers"
+        ],
+        "[15] Functions": [
+            "[15.1] intro to functions",
+            "[15.2] function arguments",
+            "[15.3] advanced arguments",
+            "[15.4] the return statement",
+            "[15.5] recursion",
+            "[15.6] lambda functions"
+        ],
+        "[16] Object-Oriented Python": [
+            "[16.1] intro to object-orients programming (OOP)",
+            "[16.2] classes & objects",
+            "[16.3] inheritance"
+        ],
+        "[17] Iterators": [
+            "[17.1] what are iterators",
+            "[17.2] create an iterator",
+            "[17.3] stop an iterator"
+        ],
+        "[18] Scope": [
+            "[18.1] what is scope",
+            "[18.2] variable naming in and out of blocks",
+            "[18.3] the global keyword"
+        ],
+        "[19] Modules": [
+            "[19.1] what are modules",
+            "[19.2] use/import modules",
+            "[19.3] renaming modules",
+            "[19.4] built-in modules",
+            "[19.5] specified importing"
+        ],
+        "[20] Dates": [
+            "[20.1] intro to dates",
+            "[20.2] create date objects",
+            "[20.3] the strftime() method"
+        ],
+        "[21] Math": [
+            "[21.1] math in python",
+            "[21.2] math module"
+        ],
+        "[22] Python JSON": [
+            "[22.1] intro to json",
+            "[22.2] json in python",
+            "[22.3] format json results"
+        ],
+        "[23] PIP": [
+            "[23.1] intro to pip",
+            "[23.2] install packages",
+            "[23.3] uninstall packages",
+            "[23.4] list installed packages",
+            "[23.5] install and uninstall multiple packages"
+        ],
+        "[24] Try Except": [
+            "[24.1] intro to try except",
+            "[24.2] specified error type exception",
+            "[24.3] try, excpet, else",
+            "[24.4] finally",
+            "[24.5] raise a custom error"
+        ],
+        "[25] File Handling": [
+            "[25.1] intro to file handling"
+        ]
+    }
 """
 
 
@@ -35,22 +234,20 @@
     - To exit the testing mode in the terminal, run the following command: exit()
 """
 
-
-# Syntax [1.2]
+# syntax [1.2]
 """
     - Python uses new line to complete a command, unlike other languages that use semi-colons
     - Python uses indentation to contain a block scope, unlike other languages that use curly-brackets
     - Indentation size doesn't matter, as long as all the code from the same block is on the same level
 """
-def first_function():
+def first_function():  # never mind about this def thingy, you will know about it later, this is just for demonstration
     lang = "Python"
     print("This is my first code in " + lang + "!")
     # notice how end of command was just a new line rather than semi-colons
     # notice how the block scope of the function is just defined using indentation
 first_function()
 
-
-# Comments [1.3]
+# comments [1.3]
 """
     - Commented code is ignored when run.
     - Comments are used to add documentation to your code, explain a code, or comment out a code 
@@ -67,6 +264,24 @@ eee = 5  # this is a single line comment after some uncommented code
     Multi-line comment actually being multi-line
     would look like this
 """
+
+# print statement [1.4]
+"""
+    - In python, you can print values into the screen
+    - To print values into the screen, use the print keyword
+"""
+print("Hello world! this my first print statement")
+
+# input [1.5]
+"""
+    - One thing to know how to do in python, is to get user input
+    - In python 2.7, we were able to take the user input by using the raw_input() method, but forget about that now
+    - In modern python (python 3.6), we can take the user input by using the input() method
+"""
+def take_user_input():  # never mind about this line for now, its just to contain the input statement
+    user_name = input("Enter your name")
+    print(user_name)  # this prints whatever the user entered as an input
+
 
 
 
@@ -945,7 +1160,7 @@ copy_list = ["Swordax", "Sword", "Axe"]  # original list to be copied
 copy_list2 = copy_list.copy()  # using the copy() method
 copy_list3 = list(copy_list)   # using the list() method
 
-# joining lists in python [8.11]
+# joining lists [8.11]
 """
     - you might sometimes need to join/concatenate lists together
     - in python, there are many ways to achieve that, here they are:
@@ -1672,7 +1887,7 @@ while _b_ < 6:
         break  # so when _b_ is 3, the loop will finish, even though the while condition is still True
     _b_ += 1
 
-# the continue statement [13.4]
+# continue statement [13.4]
 """
     - the continue statement can be used in any kind of loops, whether while or for loops
     - the continue statement skips the current iteration and moves to the next one
@@ -1914,7 +2129,7 @@ def recursion_demo(n):
 recursion_demo(6)
 # recursion could be confusing for new developers, don't worry if you don't understand it right away!
 
-# lambda function [15.6]
+# lambda functions [15.6]
 """
     - A lambda function is a small anonymous function
     - A lambda function can take any number of arguments, but it can only have one expression
@@ -2122,7 +2337,7 @@ print(next(iterator_obj_itr))  # prints: 2
 print(next(iterator_obj_itr))  # prints: 3
 # etc..
 
-# stop iterator [17.3]
+# stop an iterator [17.3]
 """
     - Example in lesson 17.2 can go on iterating forever if you continued using the next(), maybe in a loop for example.
     - To prevent the iteration to go on forever, you can use the "StopIteration" statement.
@@ -2219,7 +2434,7 @@ def greet(name):
 # now save the file as "greeting.py"
 # congrats! you created your first module
 
-# use/import a module [19.2]
+# use/import modules [19.2]
 """
     - To use a module that you/other people created, you should import it
     - You can import modules by using the "import" keyword/statement
@@ -2548,7 +2763,7 @@ my_json_str3 = json.dumps(my_py_obj, sort_keys=True)  # sorts the keys in the js
     - If you are familiar with Node.js, then PIP can be compared to NPM (Node Package Manager)
 """
 
-# install a package [23.2]
+# install packages [23.2]
 """
     - To install packages, you will need to open the CMD then navigate to your python's script directory, or just 
     open the terminal if you are using an IDE like PyCharm or VSCode
@@ -2557,7 +2772,7 @@ my_json_str3 = json.dumps(my_py_obj, sort_keys=True)  # sorts the keys in the js
     - If you want to find and explore available python's external packages, you can find them at https://pypi.org/
 """
 
-# uninstall a package [23.3]
+# uninstall packaes [23.3]
 """
     - Since you can install packages, you should also be able to uninstall them whenever you want
     - You can uninstall python packages same way you install them, but using a different command
@@ -2602,14 +2817,93 @@ my_json_str3 = json.dumps(my_py_obj, sort_keys=True)  # sorts the keys in the js
     - By using th try-catch, you can avoid getting errors and getting your program crashing, and you can treat and 
     handle the errors
 """
+# basic try except
+# example one
+defined_variable = "Hello world!"
+try:
+    print(defined_variable)
+except:
+    print("An exception occurred!")
+"""
+    - In the previous example, the code inside the try block will run, the code inside the except block will not, 
+    and that is because the try block code contains no errors
+"""
+# example two
+try:
+    print(undefined_variable)
+except:
+    print("An exception occurred!")
+    # all kinds of errors will be handled here in this except block
+"""
+    - In the previous example, the code inside the try block will not run, the code inside the except block will run, 
+    and that is because there is an error inside the try block, where the variable we are trying to print is not 
+    defined
+    - As you can see, our program had an error, but it didn't crash and fail, and that is because we used the 
+    try-except approach
+"""
+
+# specified error type exception [24.2]
+"""
+    - You might want to run an exception block for a specified error type and not for all errors
+    - you can do that by adding the error type name after the except keyword and before the starting colons
+"""
+try:
+    print(undefined_variable)
+except NameError:
+    print("The code inside this except block will run only for name errors")
+except:
+    print("The code inside this except block will run for other error types than NameError error types")
+    # since a special except block was made for NameError errors, NameError errors wont be counted inside this block
+
+# try, except, else [24.3]
+"""
+    - You can use the else keyword in try except statements
+    - The else keyword can be used to define a block of code that will run if no errors were raised in the try statement
+"""
+try:
+    print("Hello world!")
+except:
+    print("Opps! something went wrong")
+else:
+    print("Yay! nothing went wrong")
+# since no error was raised inside the try block, the except block wont run, and the else block will run
+
+# finally [24.4]
+"""
+    - The finally statement can be declared using the "finally" keyword
+    - The finally block, if specified, will be executed regardless if the try block raises an error or not
+"""
+try:
+    print("Hello world!")
+except:
+    print("Opps! something went wrong")
+finally:
+    print("The 'try except' process is completed")
+# the finally block will run whether or not an error was raised inside the try block, regardless of the result
+
+# raise a custom error [24.5]
+"""
+    - You can raise a custom error under your own specified conditions
+    - To raise an error, you should use the raise keyword
+    - You can use the Exception() method, or specify the type of the error using another error raising method
+    - Your error message should be passed as an argument to your error raising method
+"""
+if 1 == 2:
+    raise Exception("Life is broken :(")
+# or, specify the type of error
+raise_error = 1
+if not type(raise_error) is int:
+    raise TypeError("Only integers are allowed")
+# none of the above examples will raise errors as conditions do not evaluate to True
+
+
+
+
+# File Handling [25]
+# intro to file handling [25.1]
 """
     ...
 """
-
-
-
-
-
 
 
 
