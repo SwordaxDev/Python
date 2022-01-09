@@ -18,6 +18,7 @@
     - This python documentation file is written by Swordax
     - Find me on github: https://github.com/SwordaxDev/
     - Find me on discord (Swordax#5756): https://discord.com/users/465453058667839499/
+    - My website: https://swordax.netlify.app
     - Documentation Repo: https://github.com/SwordaxDev/Python/
     - Documentation Source: https://w3schools.com/python/
     - Documentation Properties: {
@@ -202,12 +203,16 @@
         "[24] Try Except": [
             "[24.1] intro to try except",
             "[24.2] specified error type exception",
-            "[24.3] try, excpet, else",
+            "[24.3] try, except, else",
             "[24.4] finally",
             "[24.5] raise a custom error"
         ],
         "[25] File Handling": [
-            "[25.1] intro to file handling"
+            "[25.1] intro to file handling",
+            "[25.2] read files",
+            "[25.3] write files",
+            "[25.4] create files",
+            "[25.5] delete files"
         ]
     }
 """
@@ -2902,17 +2907,129 @@ if not type(raise_error) is int:
 # File Handling [25]
 # intro to file handling [25.1]
 """
-    ...
+    - An important part of being a server-side programming language, is being able to handle and control files
+    - Python contains a lot of functions that can create, read, update, and delete files
+"""
+# open()
+"""
+    - open() function is the key function for working with files in python
+    - the open() functions takes in two parameters, (filename, mode)
+    - there are four different modes for opening files: {
+        r : read - default value - opens a file for reading, raises an error if file does not exist
+        a : append - opens a file for appending, creates the file if it does not exist
+        w : write - opens a file for writing, creates the file if it does not exist
+        x : create - creates the specified file, raises an error of the file already exists
+    }
+    - you can also to the second parameter an additional letter that specifies if the file should be handled as 
+    text or as binary: {
+        t : text - default value - text mode for handling text files
+        b : binary - binary mode for handling binary data (ex: images)
+    }
+"""
+file1 = open("filename.txt")  # opens a file for reading as text mode (rt) since its the default values
+file2 = open("filename.txt", "x")  # creates a text file (xt), t is the default so no need to specify it
+file3 = open("filename.txt", "wb")  # writes into a binary file (wb), both specified since they're not defaults
+
+# read files [25.2]
+"""
+    - As we learned in the intro to file handling lesson, we can use the open() function to open files
+    - The open() function returns a file object, which has a read() method for reading the content of the file
+"""
+myfile = open("filename.txt")  # didn't specify "rt" since its the default
+filecontent = myfile.read()  # gets the content of the opened file
+print(filecontent)  # prints the content of the opened file
+"""
+    - In the previous example, we opened a file in the same location as our python file
+    - We might want to open a file that is in a different location, for that we will have to specify the file path
+"""
+file_in_different_location = open("C:\Users\Dell\Documents\DirectoryName\Filename.txt")
+print(file_in_different_location.read())  # prints the content of the file
+"""
+    - The read() method returns the whole text content of the file by default, but you can specify how many 
+    characters you want to the method to return by passing the number as an argument
+"""
+print(myfile.read(5))  # this will return and print the first 5 characters in the file only
+"""
+    - You can also return one line in the file by using the readline() method
+    - By using the readline() method multiple times, you can return multiple lines of that file
+"""
+print(myfile.readline())  # returns and prints one line from the file (the first line)
+print(myfile.readline())  # returns and prints one line from the file (the second line)
+"""
+    - By looping through the lines of the file, you can read the whole file line by line
+"""
+for line in myfile:  # loops through the lines inside the file
+    print(line)  # prints the lines of the file line by line
+"""
+    - When you are done with a file, you should always close it
+    - It's a good practice to close files, but in some cases its a mandatory practice where due to buffering, 
+    changes in a file may not show until you close it
+    - You can close a file using the close() method on the file
+"""
+myfile.close()
+
+# write files [25.3]
+"""
+    - To write to an existing file, you should specify the mode in the open() function as writing modes aren't default
+    - The modes for writing in files: {
+        a : append - will append content to the end of the file
+        w : write - will overwrite any existing content
+    }
+    - You can write into files by using the write() method
+"""
+# append
+file_to_append = open("filename.txt", "a")  # "a" mode is the appending mode
+file_to_append.write("This content will be appended to the end of the file!")
+file_to_append.close()  # now if you re-open the file and read the content, you will find the appended content
+# write
+file_to_write = open("filetext.txt", "w")  # "w" mode is the writing mode (overwriting)
+file_to_write.write("This is the new content of the file, previous content has been overwritten!")
+file_to_write.close()  # now if you re-open the file and read the content, you will find the new content
+
+# create files [25.4]
+"""
+    - To create a new file in python, you should use one of the following modes in the open() function: {
+        x : create - will create a file, raises an error of file already exists
+        a : append - will create a file if the specified file doesn't exist
+        w : write - will create a file if the specified file doesn't exist
+    }
+"""
+
+# delete files [25.5]
+"""
+    - To delete a file, you will need the built-in OS module (OS stands for Operating System)
+    - Use `import os` to use the OS module
+    - To delete a file using the OS module, use the remove() function
+"""
+import os
+os.remove("filename.txt")  # or the path of the file if it exists in a different location than our python file
+"""
+    - Avoid getting error when deleting a file, you might want to check of the file exists first
+    - You can check if a file exists by doing the following:
+"""
+if os.path.exists("filename.txt"):  # returns True if file exists, False if it doesn't
+    os.remove("filename.txt")
+else:
+    print("file doesn't exist")
+"""
+    - You can also delete a directory using the rmdir() function
+    - NOTE: you can only remove empty folders
+"""
+os.rmdir("directoryname")  # or the path of the directory if it exists in a different location than our python file
+"""
+    Chapter 25 outro:
+        - you should know that there are plenty of other things you can do to handle and manipulate files, but this 
+        chapter showed you a part of the thing you could do, never stop learning new stuff from different sources!
 """
 
 
 
 
-
-
-
-
-
-
-
-
+# Documentation - Outro
+"""
+    - Congratulations on completing the Python Documentation written by Swordax
+    - Remember that learning never stops, and that this doc just gives you a push into your start with python
+    - Python has plenty of libraries and modules that you can learn to build amazing things
+    - Never stop learning, and good luck! :)
+    - Discord: Swordax#5756
+"""
