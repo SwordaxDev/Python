@@ -23,7 +23,9 @@
     - Documentation Source: https://w3schools.com/python/
     - Documentation Properties: {
         1- created on: 5th of Jan, 2022
-        2- completed on: *undefined*
+        2- completed on: 9th of Jan, 2022
+        3- total lines: 3037
+        4- total chapters: 25
     }
 """
 
