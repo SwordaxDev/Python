@@ -16,12 +16,12 @@
 # Documentation - About
 """
     - This python documentation file is written by Swordax
-    - Find me on github: https://github.com/SwordaxDev/
+    - Find me on github: https://github.com/SwordaxSy/
     - Find me on discord (Swordax#5756): https://discord.com/users/465453058667839499/
     - My website: https://swordax.netlify.app
-    - Documentation Repo: https://github.com/SwordaxDev/Python/
+    - Documentation Repo: https://github.com/SwordaxSy/Python/
     - Documentation Source: https://w3schools.com/python/
-    - Documentation Properties: {
+    - Documentation Info: {
         1- created on: 5th of Jan, 2022
         2- completed on: 9th of Jan, 2022
         3- total lines: 3037
